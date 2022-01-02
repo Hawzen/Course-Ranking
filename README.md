@@ -5,6 +5,11 @@ date: 2022 / January / 2
 title: Ranking King Saud University Computer Science Curriculum
 ---
 
+# Pre-intro
+Please read the [PDF](https://github.com/Hawzen/Course-Ranking/blob/master/course_ranking.pdf), its formatted nicely and its written in latex. If for any reason you cant do that, then this is the document in markdown.
+
+
+
 # Introduction
 
 King Saud University's computer science curriculum has many pros and
