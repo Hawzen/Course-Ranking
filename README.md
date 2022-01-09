@@ -1,20 +1,12 @@
 ---
 author:
 - Mohand Alrasheed
-date: 2022 / January / 2
+date: 2022 / January
 title: Ranking King Saud University Computer Science Curriculum
 ---
 
 # Pre-intro
 Please read the [PDF](https://github.com/Hawzen/Course-Ranking/blob/master/research/course_ranking.pdf); its formatted nicely and its written in latex. If for any reason you cant do that, then this is the document in markdown.
-
-
----
-author:
-- Mohand Alrasheed
-date: 2022 / January / 2
-title: Ranking King Saud University Computer Science Curriculum
----
 
 # Introduction
 
@@ -78,12 +70,12 @@ or all courses if they wish. Each reviewer can optionally also provide
 extra notes alongside any course.
 
 The number of courses ended up being 42, where we include the core plan
-as well as popular electives. After filtering courses with too few
-reviews we end up with a number of reviewers totalled 16 where the
-minimum number of reviews of any course is 2 and the maximum is 14, the
-distribution of counts is skewed to the right where the 50th percentile
-is 11 and the 75th is 13. After collecting the data we end up with
-(Courses, Criteria) X reviewer matrix.
+as well as popular electives. We end up with a number of reviewers
+totaling 16 reviewers where the minimum number of reviews per course is
+2 and the maximum is 14, the distribution of counts is skewed to the
+right where the 50th percentile is 11 and the 75th is 13. After
+collecting the data we end up with (Courses, Criteria) X Reviewer
+matrix.
 
 ## Score calculation
 
@@ -114,6 +106,7 @@ weighted mean of criteria, we will use three different weights.
     $$Applications * 0\; +\; Relevance * 0\; +\; Insight * 1.5\; +\; Understanding * 1.5\; +\; Ease * 0$$
 
 # Results
+
 |                 |   Real-world score |   Academic score |   General score | categories       |
 |:----------------|-------------------:|-----------------:|----------------:|:-----------------|
 | ENGLISH100      |           0.977969 |         0.587055 |        0.749899 | Humanities       |
@@ -158,26 +151,149 @@ weighted mean of criteria, we will use three different weights.
 
 We include the most important visualizations done. Which are the general
 scores ranking and the weighted scores ranking. More visualization and a
-live demo with interact-able graphs can be found
-[here](http://courses.hawzen.me).
+live demo with interact-able graphs can be found here:
+[courses.hawzen.me](http://courses.hawzen.me).
 
-
-General scores
-![mg](https://raw.githubusercontent.com/Hawzen/Course-Ranking/master/images/Course%20ranking%20(General).png)
-
-Weighted scores
-![mg2](https://raw.githubusercontent.com/Hawzen/Course-Ranking/master/images/Course%20ranking%20(Real-world%20Vs.%20Academic).png)
 ## Observations
 
-Yada yada
+We will detail a couple observations from the visualizations.
+
+#### Figure [\[fig:general_ranking\]](#fig:general_ranking){reference-type="ref" reference="fig:general_ranking"}
+
+1.  The top three courses in general ranking are CSC311, CSC329 and
+    CSC111. All of which are core computer science and are highly
+    applicable.
+
+2.  The bottom three courses in general ranking are CHEM101, PHYS104 and
+    SALAM108. All of which are not computer science related, and are all
+    studied in high school already.
+
+3.  The lowest ranking Math courses are MATH106 and MATH244, probably
+    due to it's unrelated nature compared to other math courses like
+    MATH281 and MATH151 as well as being harder than all math courses.
+
+4.  The lowest ranking computer science course is unsurprisingly CSC343
+    (Intro to Software Engineering).
+
+#### Figure [\[fig:real_vs_academic\]](#fig:real_vs_academic){reference-type="ref" reference="fig:real_vs_academic"}
+
+1.  We can see a general linear pattern in the scatter plot, which tells
+    us that having a high academic score is intimately correlated with
+    having a high real-world score.
+
+2.  Outliers which have a high Academic score but a low Real-world score
+    are CSC339 (Theory of computation) and CSC340 (Compilers and
+    translation).
+
+3.  Outliers which have a high Real-world score but a low Academic score
+    are the two English courses, which makes sense, as English is
+    extremely useful in the real world, but isn't academically related
+    to computer science.
+
+#### Figure [\[fig:my_label\]](#fig:my_label){reference-type="ref" reference="fig:my_label"}
+
+1.  Computer science and Mathematics categories are highly correlated in
+    all criteria, though we can see that mathematics have a higher score
+    in relevance but a lower score in Ease. This makes sense if one
+    considers that math is slowly changing, and courses like calculus
+    are up to date, where courses like CSC453 (Parallel processing) and
+    CSC380 (Databases) have developed so much compared to how they're
+    studied in class.
+
+2.  Humanities are generally easy, un-Insightful and its content is not
+    up to date, similar to Islamics, with the exception of Relevance.
+
+3.  Chemistry has extremely low values for all criteria, probably
+    because the category is very distant from computer science and the
+    category has only one course in it.
 
 # Conclusion
 
-Yada yada
+After looking at student opinions on all courses, we compiled a number
+of suggestions to alter the computer science plan in hopes of raising
+the scores.
 
-## Code
+#### Low Relevance scores
 
-The code can be found at <https://github.com/Hawzen/Course-Ranking>
+A few courses had excessively low Relevance scores, this means students
+think these courses are very old and need updating. Courses under 3 in
+relevance are:
+
+1.  ARB100
+
+2.  TECH101[^2]
+
+3.  Entrepeneure101.
+
+4.  FAJAB101
+
+5.  NAHAJ
+
+6.  CHEM101
+
+7.  CSC380
+
+8.  CSC343
+
+9.  CSC453
+
+10. CSC443
+
+Low relevance score in core computer science courses like CSC380 and
+CSC453 is not good, and an easy way to improve those courses is by
+updating the material. CSC380 for instance is only concerened with
+relational databases, where in the real world so many database variants
+are out there but the course doesn't even mention them as it created
+ages ago.
+
+#### High Application scores
+
+The highest computer science Application scores are doing something
+right, we will mention their names and detail what those courses do
+differently from other courses.
+
+1.  CSC111 (Programming I)
+
+2.  CSC212 (Data Structures)
+
+3.  CSC311 (Algorithm analysis and design)
+
+4.  CSC462 (Machine learning)
+
+All courses mentioned had many Labs/Homeworks/Programming Assignments,
+other courses with very low application scores had relatively few or no
+programming assignments, thus, we can see that this factor is highly
+correlated with the application score. This doesn't mean imposing
+assignments on courses like CSC304 (Ethics) is going to be helpful
+though.
+
+#### Low Understanding scores
+
+Many courses have low Understanding scores (i.e. rely heavily on
+memorization) such as:
+
+1.  CSC343 (Intro to Software Engineering)
+
+2.  CSC227 (OS)
+
+3.  CSC443 (IT Project Management)
+
+This is not entirely due to the course's nature, as courses like
+Networking which have a large theoretical body to read scored very
+highly on this criterion. Carefully chosen questions on exams and
+quizzes can change the perception from memorization to understanding.
+This is generally unfavorable in all circumstances and is possibly an
+area where change could improve the computer science plan.
+
+## Code & Demo
+
+The code can be found at
+[github.com/Hawzen/Course-Ranking](https://github.com/Hawzen/Course-Ranking)\
+A live demo can be found at
+[courses.hawzen.me](http://courses.hawzen.me).
 
 [^1]: Categories are divided in this way: Humanities, Mathematics,
     Chemistry, Islamics, Physics, Computer science
+
+[^2]: This course has been overhauled recently, and most reviewers have
+    not studied the overhauled course
