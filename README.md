@@ -161,6 +161,12 @@ scores ranking and the weighted scores ranking. More visualization and a
 live demo with interact-able graphs can be found
 [here](http://courses.hawzen.me).
 
+
+General scores
+![mg](https://raw.githubusercontent.com/Hawzen/Course-Ranking/master/images/Course%20ranking%20(General).png)
+
+Weighted scores
+![mg2](https://raw.githubusercontent.com/Hawzen/Course-Ranking/master/images/Course%20ranking%20(Real-world%20Vs.%20Academic).png)
 ## Observations
 
 Yada yada
