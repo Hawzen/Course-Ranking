@@ -6,7 +6,7 @@ title: Ranking King Saud University Computer Science Curriculum
 ---
 
 # Pre-intro
-Please read the [PDF](https://github.com/Hawzen/Course-Ranking/blob/master/course_ranking.pdf); its formatted nicely and its written in latex. If for any reason you cant do that, then this is the document in markdown.
+Please read the [PDF](https://github.com/Hawzen/Course-Ranking/blob/master/research/course_ranking.pdf); its formatted nicely and its written in latex. If for any reason you cant do that, then this is the document in markdown.
 
 
 ---
