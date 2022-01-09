@@ -114,46 +114,45 @@ weighted mean of criteria, we will use three different weights.
     $$Applications * 0\; +\; Relevance * 0\; +\; Insight * 1.5\; +\; Understanding * 1.5\; +\; Ease * 0$$
 
 # Results
-
-                      Real-world score   Academic score   General score categories
-  ----------------- ------------------ ---------------- --------------- ------------------
-  ENGLISH100                  0.977969         0.587055        0.749899 Humanities
-  ARB100                      0.644273         0.561107        0.559423 Humanities
-  MATH101                     0.899391         0.883593        0.772007 Mathematics
-  CHEM101                     0.520728         0.438133        0.445344 Chemistry
-  STAT101                     0.927789         0.804526        0.756429 Mathematics
-  TECH101                     0.765262         0.545605        0.626730 Humanities
-  ENTREPRENEUR101             0.601895         0.521720        0.530546 Humanities
-  FAJAB101                    0.600165         0.538924        0.546742 Humanities
-  NAHAJ101                    0.638404         0.661528        0.594242 Humanities
-  ENGLISH110                  0.918583         0.582118        0.713858 Humanities
-  SALAM107                    0.754027         0.638643        0.659744 Islamics
-  PHYS104                     0.624921         0.534890        0.519392 Physics
-  MATH106                     0.794863         0.735696        0.674323 Mathematics
-  CSC111                      0.984843         0.934987        0.849246 Computer science
-  MATH151                     0.954951         0.868024        0.817721 Mathematics
-  SALAM108                    0.634832         0.415596        0.526326 Islamics
-  CSC113                      0.840633         0.775292        0.730219 Computer science
-  CSC220                      0.862635         0.832111        0.739635 Computer science
-  MATH244                     0.831908         0.716022        0.674008 Mathematics
-  CSC212                      0.943643         1.000000        0.839300 Computer science
-  CSC215                      0.801212         0.781024        0.676474 Computer science
-  MATH281                     0.848302         0.846393        0.748259 Mathematics
-  CSC304                      0.676360         0.582436        0.612944 Computer science
-  CSC380                      0.795881         0.727745        0.676944 Computer science
-  CSC227                      0.740514         0.637227        0.619513 Computer science
-  CSC311                      0.993665         0.991418        0.866180 Computer science
-  CSC339                      0.671742         0.846109        0.679513 Computer science
-  CSC343                      0.659292         0.501000        0.529513 Computer science
-  CSC361                      0.801822         0.819164        0.703416 Computer science
-  CSC329                      0.971137         0.964173        0.849513 Computer science
-  CSC340                      0.609492         0.737127        0.586180 Computer science
-  CSC453                      0.658107         0.646309        0.582847 Computer science
-  CSC496                      0.898492         0.796582        0.736309 Computer science
-  PHYS103                     0.611916         0.635857        0.542905 Physics
-  CSC443                      0.683071         0.549409        0.578540 Computer science
-  CSC462                      1.000000         0.922291        0.843796 Computer science
-  CSC489                      0.792190         0.732545        0.691387 Computer science
+|                 |   Real-world score |   Academic score |   General score | categories       |
+|:----------------|-------------------:|-----------------:|----------------:|:-----------------|
+| ENGLISH100      |           0.977969 |         0.587055 |        0.749899 | Humanities       |
+| ARB100          |           0.644273 |         0.561107 |        0.559423 | Humanities       |
+| MATH101         |           0.899391 |         0.883593 |        0.772007 | Mathematics      |
+| CHEM101         |           0.520728 |         0.438133 |        0.445344 | Chemistry        |
+| STAT101         |           0.927789 |         0.804526 |        0.756429 | Mathematics      |
+| TECH101         |           0.765262 |         0.545605 |        0.62673  | Humanities       |
+| ENTREPRENEUR101 |           0.601895 |         0.52172  |        0.530546 | Humanities       |
+| FAJAB101        |           0.600165 |         0.538924 |        0.546742 | Humanities       |
+| NAHAJ101        |           0.638404 |         0.661528 |        0.594242 | Humanities       |
+| ENGLISH110      |           0.918583 |         0.582118 |        0.713858 | Humanities       |
+| SALAM107        |           0.754027 |         0.638643 |        0.659744 | Islamics         |
+| PHYS104         |           0.624921 |         0.53489  |        0.519392 | Physics          |
+| MATH106         |           0.794863 |         0.735696 |        0.674323 | Mathematics      |
+| CSC111          |           0.984843 |         0.934987 |        0.849246 | Computer science |
+| MATH151         |           0.954951 |         0.868024 |        0.817721 | Mathematics      |
+| SALAM108        |           0.634832 |         0.415596 |        0.526326 | Islamics         |
+| CSC113          |           0.840633 |         0.775292 |        0.730219 | Computer science |
+| CSC220          |           0.862635 |         0.832111 |        0.739635 | Computer science |
+| MATH244         |           0.831908 |         0.716022 |        0.674008 | Mathematics      |
+| CSC212          |           0.943643 |         1        |        0.8393   | Computer science |
+| CSC215          |           0.801212 |         0.781024 |        0.676474 | Computer science |
+| MATH281         |           0.848302 |         0.846393 |        0.748259 | Mathematics      |
+| CSC304          |           0.67636  |         0.582436 |        0.612944 | Computer science |
+| CSC380          |           0.795881 |         0.727745 |        0.676944 | Computer science |
+| CSC227          |           0.740514 |         0.637227 |        0.619513 | Computer science |
+| CSC311          |           0.993665 |         0.991418 |        0.86618  | Computer science |
+| CSC339          |           0.671742 |         0.846109 |        0.679513 | Computer science |
+| CSC343          |           0.659292 |         0.501    |        0.529513 | Computer science |
+| CSC361          |           0.801822 |         0.819164 |        0.703416 | Computer science |
+| CSC329          |           0.971137 |         0.964173 |        0.849513 | Computer science |
+| CSC340          |           0.609492 |         0.737127 |        0.58618  | Computer science |
+| CSC453          |           0.658107 |         0.646309 |        0.582847 | Computer science |
+| CSC496          |           0.898492 |         0.796582 |        0.736309 | Computer science |
+| PHYS103         |           0.611916 |         0.635857 |        0.542905 | Physics          |
+| CSC443          |           0.683071 |         0.549409 |        0.57854  | Computer science |
+| CSC462          |           1        |         0.922291 |        0.843796 | Computer science |
+| CSC489          |           0.79219  |         0.732545 |        0.691387 | Computer science |
 
 ## Visuals
 
