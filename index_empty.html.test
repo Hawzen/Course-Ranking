@@ -20,8 +20,24 @@
 			display: table;
 			margin: 0 auto;
 		}
-
+		a {
+			font-family: "Lucida Console", "Courier New", monospace; 
+			font-size: 24px; 
+			font-style: normal; 
+			font-variant: normal; 
+			font-weight: 30; 
+			line-height: 26.4px; 
+			/*background-color: black;*/
+  			color: rgb(120, 120, 120);
+  			text-decoration: none;
+  			padding: 0.5em;
+		}
 	</style>
 	<body>
 		<div id="plots">
+			<div>
+				<a href=https://github.com/Hawzen/Course-Ranking/blob/master/research/course_ranking.pdf>Document</a> ||||||||||
+				<a href=https://github.com/Hawzen/Course-Ranking>Code</a>
+			</div>
+			
 			
