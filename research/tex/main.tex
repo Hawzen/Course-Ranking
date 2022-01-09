@@ -5,9 +5,9 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \renewcommand{\baselinestretch}{1.2}
-\title{Ranking King Saud University Computer Science Curriculum}
+\title{Analyzing King Saud University Computer Science Curriculum}
 \author{Mohand Alrasheed}
-\date{2022 / January / 2}
+\date{2022 / January}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -29,7 +29,7 @@ We make a number of assumptions regarding the evaluation of courses, these guide
 \begin{enumerate}
     \item The course instructor's influence is minimized when ranking courses by imagining all courses being taught by a perfect instructor.
     \item The ranking has been chosen by students mostly on their final semester, which would mean most of them have not studied the last semester and in turn we will not take its courses into consideration in this version.
-    \item The ranking has been chosen by students mostly belonging batch 439 and 438, different batches might rank courses differently as course content changes slowly.
+    \item The ranking has been chosen by students mostly belonging batch 439 and 438, different batches might rank courses differently as co\textbf{}urse content changes slowly.
     \item Most electives are not taken into consideration, but a small number of popular electives will be considered. 
 \end{enumerate}
 
@@ -50,7 +50,8 @@ Courses are judged based on five criteria chosen by the most elite members of 43
 \subsection{Data}
 The data is collected and sorted using \emph{Google Forms} in which each reviewer identifies their university batch and sex as well as rate an optional number of courses, i.e. the reviewer can review zero courses, or all courses if they wish. Each reviewer can optionally also provide extra notes alongside any course. 
 
-The number of courses ended up being 42, where we include the core plan as well as popular electives. After filtering courses with too few reviews we end up with a number of reviewers totalled 16 where the minimum number of reviews of any course is 2 and the maximum is 14, the distribution of counts is skewed to the right where the 50th percentile is 11 and the 75th is 13. After collecting the data we end up with (Courses, Criteria) X reviewer matrix.
+The number of courses ended up being 42, where we include the core plan as well as popular electives. We end up with a number of reviewers totaling 16 reviewers where the minimum number of reviews per course is 2 and the maximum is 14, the distribution of counts is skewed to the right where the 50th percentile is 11 and the 75th is 13. After collecting the data we end up with (Courses, Criteria) X Reviewer matrix.
+
 \subsection{Score calculation}
 Due to the low sample size on reviews of some courses we treat the problem as a \emph{Bayesian estimation} problem. In our implementation we possess an idea of the original values we're predicting what we call the \emph{prior}, which in this case will be the arithmetic mean of a criterion on some category\footnote{Categories are divided in this way: Humanities, Mathematics, Chemistry, Islamics, Physics, Computer science}, then we  update our beliefs given new evidence (reviews) by taking a weighted average of the criterion and the prior. \[(r_1 * w_1 + .. + r_n * w_n + c{_m_e_a_n} * w_c)/(\Sigma^n_{i_=_1} w_i + w_c)\]
 We experimented with the weight of the category mean \(c_{m_e_a_n}\) and arrived at a weight half as weighty as the weight of the reviews.
@@ -112,30 +113,100 @@ CSC489          &          0.792190 &        0.732545 &       0.691387 &  Comput
 \end{tabular}
 
 \subsection{Visuals}
-We include the most important visualizations done. Which are the general scores ranking and the weighted scores ranking. More visualization and a live demo with interact-able graphs can be found \href{http://courses.hawzen.me}{here}.
+We include the most important visualizations done. Which are the general scores ranking and the weighted scores ranking. More visualization and a live demo with interact-able graphs can be found here: \href{http://courses.hawzen.me}{courses.hawzen.me}.
 
 \begin{figure}
     \centering
     \hskip-1.7cm \rotatebox[origin=c]{90}{\includegraphics[scale=.3]{normal.png}}
     \caption{Scores based on general ranking}
-    \label{fig:my_label}
+    \label{fig:general_ranking}
 \end{figure}
 
 \begin{figure}
     \centering
     \rotatebox[origin=c]{90}{\includegraphics[scale=.3]{weighted.png}}
     \caption{Scores based on Real-world Vs. Academic ranking}
+    \label{fig:real_vs_academic}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \rotatebox[origin=c]{90}{\includegraphics[scale=.3]{Categories summary.png}}
+    \caption{Scores based on Real-world Vs. Academic ranking}
     \label{fig:my_label}
 \end{figure}
+
 
 \clearpage
 
 \subsection{Observations}
-Yada yada
+We will detail a couple observations from the visualizations.
+
+\paragraph{Figure \ref{fig:general_ranking}}
+\begin{enumerate}
+    \item The top three courses in general ranking are CSC311, CSC329 and CSC111. All of which are core computer science and are highly applicable.
+    \item The bottom three courses in general ranking are CHEM101, PHYS104 and SALAM108. All of which are not computer science related, and are all studied in high school already.
+    \item The lowest ranking Math courses are MATH106 and MATH244, probably due to it's unrelated nature compared to other math courses like MATH281 and MATH151 as well as being harder than all math courses.
+    \item The lowest ranking computer science course is unsurprisingly CSC343 (Intro to Software Engineering).
+\end{enumerate}
+
+\paragraph{Figure \ref{fig:real_vs_academic}}
+\begin{enumerate}
+    \item We can see a general linear pattern in the scatter plot, which tells us that having a high academic score is intimately correlated with having a high real-world score.
+    \item Outliers which have a high Academic score but a low Real-world score are CSC339 (Theory of computation) and CSC340 (Compilers and translation).
+    \item Outliers which have a high Real-world score but a low Academic score are the two English courses, which makes sense, as English is extremely useful in the real world, but isn't academically related to computer science.
+\end{enumerate}
+
+\paragraph{Figure \ref{fig:my_label}}
+\begin{enumerate}
+    \item Computer science and Mathematics categories are highly correlated in all criteria, though we can see that mathematics have a higher score in relevance but a lower score in Ease. This makes sense if one considers that math is slowly changing, and courses like calculus are up to date, where courses like CSC453 (Parallel processing) and CSC380 (Databases) have developed so much compared to how they're studied in class.
+    \item Humanities are generally easy, un-Insightful and its content is not up to date, similar to Islamics, with the exception of Relevance.
+    \item Chemistry has extremely low values for all criteria, probably because the category is very distant from computer science and the category has only one course in it.
+\end{enumerate}
 
 \section{Conclusion}
-Yada yada
+After looking at student opinions on all courses, we compiled a number of suggestions to alter the computer science plan in hopes of raising the scores.
 
-\subsection{Code}
-The code can be found at \url{https://github.com/Hawzen/Course-Ranking}
+\paragraph{Low Relevance scores}
+A few courses had excessively low Relevance scores, this means students think these courses are very old and need updating. Courses under 3 in relevance are:
+\begin{enumerate}
+    \item ARB100
+    \item TECH101\footnote{This course has been overhauled recently, and most reviewers have not studied the overhauled course}
+    \item Entrepeneure101.
+    \item FAJAB101
+    \item NAHAJ
+    \item CHEM101
+    \item CSC380
+    \item CSC343
+    \item CSC453
+    \item CSC443
+\end{enumerate}
+
+Low relevance score in core computer science courses like CSC380 and CSC453 is not good, and an easy way to improve those courses is by updating the material. CSC380 for instance is only concerened with relational databases, where in the real world so many database variants are out there but the course doesn't even mention them as it created ages ago.
+
+\paragraph{High Application scores}
+The highest computer science Application scores are doing something right, we will mention their names and detail what those courses do differently from other courses.
+\begin{enumerate}
+    \item CSC111 (Programming I)
+    \item CSC212 (Data Structures)
+    \item CSC311 (Algorithm analysis and design)
+    \item CSC462 (Machine learning)
+\end{enumerate}
+All courses mentioned had many Labs/Homeworks/Programming Assignments, other courses with very low application scores had relatively few or no programming assignments, thus, we can see that this factor is highly correlated with the application score. This doesn't mean imposing assignments on courses like CSC304 (Ethics) is going to be helpful though.
+
+\paragraph{Low Understanding scores}
+Many courses have low Understanding scores (i.e. rely heavily on memorization) such as:
+\begin{enumerate}
+    \item CSC343 (Intro to Software Engineering)
+    \item CSC227 (OS)
+    \item CSC443 (IT Project Management)
+\end{enumerate}
+This is not entirely due to the course's nature, as courses like Networking which have a large theoretical body to read scored very highly on this criterion. Carefully chosen questions on exams and quizzes can change the perception from memorization to understanding. This is generally unfavorable in all circumstances and is possibly an area where change could improve the computer science plan.
+
+
+
+\subsection{Code \& Demo}
+The code can be found at \href{https://github.com/Hawzen/Course-Ranking}{github.com/Hawzen/Course-Ranking} \\
+A live demo can be found at \href{http://courses.hawzen.me}{courses.hawzen.me}.
+
 \end{document}
